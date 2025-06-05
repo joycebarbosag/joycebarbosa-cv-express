@@ -3,18 +3,29 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon --exec babel-node api/index.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "express",
+    "node",
+    "npm",
+    ".env"
+  ],
+  "author": "Joyce Barbosa",
   "license": "ISC",
-  "description": "",
   "dependencies": {
-    "express": "^5.1.0"
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "pg": "^8.16.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.7"
   },
+  "description": "",
   "devDependencies": {
-    "@babel/cli": "^7.27.2",
     "@babel/core": "^7.27.4",
-    "@babel/preset-env": "^7.27.2"
+    "@babel/node": "^7.27.1",
+    "@babel/preset-env": "^7.27.2",
+    "nodemon": "^3.1.10"
   }
 }
