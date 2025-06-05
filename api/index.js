@@ -27,7 +27,7 @@ app.use("/contacts", routes.contact);
 app.use("/addresses", routes.address);
 
 app.get("/", (req, res) => {
-  res.send("✅ API está rodando!");
+  res.send("A API do currículo da aluna Joyce Barbosa está rodando! Explore as rotas criadas.");
 });
 
 sequelize
