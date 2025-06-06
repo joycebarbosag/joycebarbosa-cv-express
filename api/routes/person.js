@@ -30,50 +30,11 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.put("/:personId/skills", async (req, res) => {
+router.put("/:personId", async (req, res) => {
   try {
-    const updatedPerson = await req.context.models.Person.updateSkills(
+    const updatedPerson = await req.context.models.Person.updatePerson(
       req.params.personId,
-      req.body.skills
-    );
-    if (!updatedPerson) return res.status(404).json({ error: "Person not found" });
-    return res.json(updatedPerson);
-  } catch (error) {
-    return res.status(400).json({ error: error.message });
-  }
-});
-
-router.put("/:personId/currentJob", async (req, res) => {
-  try {
-    const updatedPerson = await req.context.models.Person.updateCurrentJob(
-      req.params.personId,
-      req.body.currentJob
-    );
-    if (!updatedPerson) return res.status(404).json({ error: "Person not found" });
-    return res.json(updatedPerson);
-  } catch (error) {
-    return res.status(400).json({ error: error.message });
-  }
-});
-
-router.put("/:personId/desiredJob", async (req, res) => {
-  try {
-    const updatedPerson = await req.context.models.Person.updateDesiredJob(
-      req.params.personId,
-      req.body.desiredJob
-    );
-    if (!updatedPerson) return res.status(404).json({ error: "Person not found" });
-    return res.json(updatedPerson);
-  } catch (error) {
-    return res.status(400).json({ error: error.message });
-  }
-});
-
-router.put("/:personId/description", async (req, res) => {
-  try {
-    const updatedPerson = await req.context.models.Person.updateDescription(
-      req.params.personId,
-      req.body.description
+      req.body
     );
     if (!updatedPerson) return res.status(404).json({ error: "Person not found" });
     return res.json(updatedPerson);

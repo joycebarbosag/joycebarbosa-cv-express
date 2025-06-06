@@ -31,22 +31,6 @@ const getContactModel = (sequelize, { DataTypes }) => {
         return await this.findAll(); // Sem include
     };
 
-    Contact.updateEmail = async function (id, newEmail) {
-        const contact = await this.findByPk(id);
-        if (!contact) return null;
-        contact.email = newEmail;
-        await contact.save();
-        return contact;
-    }
-
-    Contact.updatePhone = async function (id, newPhone) {
-        const contact = await this.findByPk(id);
-        if (!contact) return null;
-        contact.phone = newPhone;
-        await contact.save();
-        return contact;
-    }
-
     return Contact;
 }
 
